@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-display: "Libre Caslon Text", "Playfair Display", serif;
+  --color-parchment: #fff8f2;
+  --color-ink: #1f1b14;
+  --color-crimson: #920703;
+  --color-forest: #228b22;
+  --color-secondary-grey: #645e49;
+}
+
+body {
+  background-color: #fff8f2;
+  color: #1f1b14;
+  font-family: var(--font-serif);
+}
+
+/* Tactile Parchment Overlay */
+.parchment-texture {
+  background-color: #fff8f2;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* Ink stroke layout lines */
+.ink-border {
+  border: 1px solid rgba(31, 27, 20, 0.16);
+}
+
+.ink-border-heavy {
+  border: 2px solid rgba(31, 27, 20, 0.3);
+}
+
+.cloud-divider {
+  height: 20px;
+  background-image: radial-gradient(circle at 10px 0, transparent 10px, rgba(146, 7, 3, 0.12) 11px, rgba(146, 7, 3, 0.12) 12px, transparent 13px);
+  background-size: 20px 20px;
+  background-position: top center;
+  opacity: 0.6;
+}
+
+@keyframes float-ember {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.1; }
+  50% { opacity: 0.4; }
+  100% { transform: translateY(-80px) translateX(15px) scale(1.3); opacity: 0; }
+}
+
+.ember {
+  animation: float-ember 12s ease-in-out infinite alternate;
+}
